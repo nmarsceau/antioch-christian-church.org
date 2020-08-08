@@ -1,1 +1,15 @@
-{"env":{"browser":true,"es2020":true},"extends":"eslint:recommended","parserOptions":{"ecmaVersion":11,"sourceType":module},"rules":{}}
+{
+    "env": {
+        "browser": true,
+        "es2020":true
+    },
+    "extends": "airbnb-base",
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
+    },
+    "rules": {
+      "func-names": ["error", "never"],
+      "prefer-arrow-callback": 0
+    }
+}
