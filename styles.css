@@ -1,0 +1,177 @@
+/* TABLE OF CONTENTS
+
+1. Global
+2. Slider
+
+*/
+
+/******
+  1. Global
+******/
+body {
+  font-size: 1.2em;
+  font-family: sans-serif;
+}
+
+main {
+  min-height: 80vh;
+}
+
+label {
+  line-height: 1.3em;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-family: serif;
+}
+
+@media screen and (min-width: 350px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (min-width: 500px) {
+  h1 {
+    font-size: 3.3rem;
+  }
+}
+
+@media screen and (min-width: 650px) {
+  h1 {
+    font-size: 3.7rem;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  h1 {
+    font-size: 4.5rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  h1 {
+    font-size: 5.5rem;
+  }
+}
+
+h2 {
+  border-bottom: 3px solid gray;
+}
+
+footer {
+  font-size: 0.8em;
+}
+
+@media screen and (min-width: 576px) {
+  footer {
+    font-size: 1em;
+  }
+}
+
+.slider img {
+  border: 1px solid gray;
+}
+
+/******
+  2. Slider
+******/
+.slider-wrapper {
+  position: relative;
+  transition: 300ms;
+}
+
+.slider {
+  position: relative;
+}
+
+.slider-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  transition: 300ms;
+  text-align: center;
+  opacity: 0;
+  visibility: hidden;
+  padding: 20px 3%;
+}
+
+@media screen and (min-width: 768px) {
+  .slider-item {
+    padding: 20px 5%;
+  }
+}
+
+.slider-item.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slider-item img {
+  width: 100%;
+}
+
+.slider-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0;
+}
+
+.slider-nav button {
+  cursor: pointer;
+  font-size: 3em;
+  background: none;
+  border: none;
+}
+
+@media screen and (max-width: 576px) {
+  .slider-nav button {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 576px) {
+  .slider-nav button.previous-slide {
+    margin-left: -20px;
+  }
+
+  .slider-nav button.next-slide {
+    margin-right: -20px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .slider-nav button.previous-slide {
+    margin-left: 0;
+  }
+
+  .slider-nav button.next-slide {
+    margin-right: 0;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .slider-nav button.previous-slide {
+    margin-left: 10px;
+  }
+
+  .slider-nav button.next-slide {
+    margin-right: 10px;
+  }
+}
