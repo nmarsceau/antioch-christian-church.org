@@ -4,6 +4,7 @@
 1. Layout
 2. Theme
 3. Slider
+4. Skip to Main Content
 
 */
 
@@ -308,4 +309,29 @@ footer {
   .slider-nav button.next-slide {
     margin-right: 0;
   }
+}
+
+/* 4. Skip to Main Content */
+#main-content {
+  position: relative;
+  top: -4em;
+}
+
+a[href="#main-content"] {
+  z-index: 999;
+  position: fixed;
+  top: -100px;
+  padding: 0.5em 1em 0.75em;
+  left: 30px;
+  border-radius: 0px 0px 10px 10px;
+  box-shadow: 0px -3px 20px -2px #000;
+  background-color: #fff;
+  color: #000;
+  border: 3px solid #000;
+}
+
+a[href="#main-content"]:focus, a[href="#main-content"]:active {
+  top: -3px;
+  text-decoration: underline;
+  outline: none;
 }
