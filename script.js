@@ -63,22 +63,37 @@ if (copyrightCurrentYear !== null) {
     });
 
     // swipe navigation
+    let passive_supported = false;
+    try {
+      const options = {
+        get passive() {
+          passive_supported = true;
+          return false;
+        }
+      };
+      window.addEventListener('test', null, options);
+      window.removeEventListener('test', null, options);
+    }
+    catch (error) {
+      passive_supported = false;
+    }
     slider.addEventListener('touchstart', function(event) {
       slider.initial_x = event.touches[0].clientX;
       slider.initial_y = event.touches[0].clientY;
-    }, {capture: false, passive: true});
+    }, passive_supported ? {capture: false, passive: true} : false);
     slider.addEventListener('touchmove', function(event) {
-      if (slider.initial_x === null || slider.initial_y === null) {return;}
-      event.preventDefault();
-      const diffX = slider.initial_x - event.touches[0].clientX;
-      const diffY = slider.initial_y - event.touches[0].clientY;
-      if (Math.abs(diffX) > Math.abs(diffY)) {
-        slider.lastUserInteraction = Date.now();
-        if (diffX > 0) {nextSlide(slider);}
-        else {previousSlide(slider);}
+      if (slider.initial_x !== null && slider.initial_y !== null) {
+        event.preventDefault();
+        const diffX = slider.initial_x - event.touches[0].clientX;
+        const diffY = slider.initial_y - event.touches[0].clientY;
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          slider.lastUserInteraction = Date.now();
+          if (diffX > 0) {nextSlide(slider);}
+          else {previousSlide(slider);}
+        }
+        slider.initial_x = null;
+        slider.initial_y = null;
       }
-      slider.initial_x = null;
-      slider.initial_y = null;
     }, false);
   }
 }());
