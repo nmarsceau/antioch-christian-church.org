@@ -66,7 +66,7 @@ if (copyrightCurrentYear !== null) {
     slider.addEventListener('touchstart', function(event) {
       slider.initial_x = event.touches[0].clientX;
       slider.initial_y = event.touches[0].clientY;
-    }, false);
+    }, {capture: false, passive: true});
     slider.addEventListener('touchmove', function(event) {
       if (slider.initial_x === null || slider.initial_y === null) {return;}
       event.preventDefault();
