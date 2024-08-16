@@ -1,0 +1,15 @@
+{
+	"name": "antioch-christian-church.org",
+	"version": "1.0.0",
+	"description": "This is the codebase for antioch-christian-church.org.",
+	"main": "index.html",
+	"scripts": {
+	  "dev": "ws",
+	  "test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Nicolas Marsceau",
+	"license": "MIT",
+  	"devDependencies": {
+    	"local-web-server": "^5.4.0"
+  	}
+}
