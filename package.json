@@ -10,6 +10,6 @@
 	"author": "Nicolas Marsceau",
 	"license": "MIT",
 	"devDependencies": {
-		"local-web-server": "^5.4.0"
+		"local-web-server": "*"
 	}
 }
