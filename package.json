@@ -4,12 +4,9 @@
 	"description": "This is the codebase for antioch-christian-church.org.",
 	"main": "index.html",
 	"scripts": {
-		"dev": "ws",
+		"dev": "npx http-server . -p 8080",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Nicolas Marsceau",
-	"license": "MIT",
-	"devDependencies": {
-		"local-web-server": "*"
-	}
+	"license": "MIT"
 }
